@@ -80,6 +80,13 @@ function cssbuild(done) {
   done();
 }
 
+function browser(done) {
+  browserSync.init({
+    server: {
+      baseDir: paths.root
+    }
+  });
+
 function jsbuild(done) {
   return src([  
     paths.root_npm+'jquery/dist/jquery.min.js',
