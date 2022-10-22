@@ -60,6 +60,13 @@ function browser(done) {
   done();
 }
 
+function browser(done) {
+  browserSync.init({
+    server: {
+      baseDir: paths.root
+    }
+  });
+
 function cssbuild(done) {
   return src(paths.scss.all)
     .pipe(sass(sassOptions).on("error", sass.logError))
