@@ -80,6 +80,26 @@ function cssbuild(done) {
   done();
 }
 
+function getPaths () {
+  return {
+    root: './',
+    root_npm:'node_modules/',
+    html : "*.html",
+    js : "src/js/app.js", 
+    html_master : {
+      page: "src/html-master/html-page/**/*.html",
+      partial: "src/html-master/html-partial/**/*.html"
+    },
+    scss: { 
+      all: 'src/app/scss/**/*.scss', 
+    },
+    dest : {
+      css: "src/app/css/",
+      js: "src/app/js/"
+    } 
+  }
+};
+
 function jsbuild(done) {
   return src([  
     paths.root_npm+'jquery/dist/jquery.min.js',
